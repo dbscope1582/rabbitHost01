@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-pushd latest/portal
-sudo make elastic-init-mapping
-sudo make workers-start
+pushd ../../latest/portal
+make elastic-init-mapping
+make workers-start
 popd

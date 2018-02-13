@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pushd latest/portal
-sudo make up
+pushd ../../latest/portal
+ make up
 popd
 
 echo ==========SCOPE 
