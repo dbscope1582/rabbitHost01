@@ -34,14 +34,18 @@ pushd ../..
     # a hack mabye sufficient to get rid of the need for the first sudo
     # sudo chmod a+w /tmp
     # 20180122 added the following line (not sure if it must be kept in here after one successful run
+    sudo make prepare-host-for-es
+    # not mentioned in the README.md
     make pull-images #requires docker-compose >= 1.18.0
- #   make init
+    make init
  #   make build
- #   make up
+    make up
   popd
 
   echo =========== SCOPE
-  echo now call ./setup_step2.sh
-  echo the last call from setup.sh is sudo make up. Which typically waits not long enough. so
-  echo call ./setup_step2.sh until it succeeds
+  echo if the output contains the \(green\) line saying
+  echo Le compt administrateur admin@naoned.fr est enregistré
+  echo then proceed with ./setup_step3.sh
+  echo
+  echo else call as many times ./setup_step2.sh until you see the mentioned line
 popd
